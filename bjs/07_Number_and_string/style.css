@@ -6,4 +6,14 @@
 .input-window {
     text-align: end;
     font-size: x-large;
+    background-color: #fff;
+}
+
+.card-body {
+    background-color: #000;
+}
+
+.col {
+    margin-bottom: 1px;
+    margin-right: 1px;
 }

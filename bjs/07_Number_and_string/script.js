@@ -77,25 +77,28 @@ document.getElementById('btn_0').addEventListener('click', function () {
 })
 
 document.getElementById('btn_sum').addEventListener('click', function () {
-    lastOperand = parseInt(inputWindow.value);
+    lastOperand = parseFloat(inputWindow.value);
     operation = 'sum';
     inputWindow.value = '';
+    if (inputWindow.value.includes('-') == false) {
+        inputWindow.value += "-";
+    }
 })
 
 document.getElementById('btn_def').addEventListener('click', function () {
-    lastOperand = parseInt(inputWindow.value);
+    lastOperand = parseFloat(inputWindow.value);
     operation = 'def';
     inputWindow.value = '';
 })
 
 document.getElementById('btn_mult').addEventListener('click', function () {
-    lastOperand = parseInt(inputWindow.value);
+    lastOperand = parseFloat(inputWindow.value);
     operation = 'mult';
     inputWindow.value = '';
 })
 
 document.getElementById('btn_dev').addEventListener('click', function () {
-    lastOperand = parseInt(inputWindow.value);
+    lastOperand = parseFloat(inputWindow.value);
     operation = 'dev';
     inputWindow.value = '';
 })
@@ -112,7 +115,7 @@ document.getElementById('btn_sqrt').addEventListener('click', function () {
 })
 
 document.getElementById('btn_unar').addEventListener('click', function () {
-    lastOperand = parseInt(inputWindow.value);
+    lastOperand = parseFloat(inputWindow.value);
     operation = 'unar';
     inputWindow.value = '';
 
@@ -126,21 +129,14 @@ document.getElementById('btn_unar').addEventListener('click', function () {
 
 document.getElementById('btn_point').addEventListener('click', function () {
     lastOperand = parseFloat(inputWindow.value);
-    operation = 'point';
-    inputWindow.value = '';
-
-    if (operation === 'point') {
-        const result = +inputWindow.value + '.';
-        operation = null;
-        lastOperand = 0;
-        inputWindow.value = result;
+    if (inputWindow.value.includes('.') == false) {
+        inputWindow.value += ".";
     }
-
 })
 
 document.getElementById('btn_calc').addEventListener('click', function () {
     if (operation === 'sum') {
-        const result = lastOperand + parseInt(inputWindow.value);
+        const result = lastOperand + parseFloat(inputWindow.value);
         operation = null;
         lastOperand = 0;
         inputWindow.value = result;
@@ -154,14 +150,14 @@ document.getElementById('btn_calc').addEventListener('click', function () {
     }
 
     if (operation === 'mult') {
-        const result = lastOperand * parseInt(inputWindow.value);
+        const result = lastOperand * parseFloat(inputWindow.value);
         operation = null;
         lastOperand = 0;
         inputWindow.value = result;
     }
 
     if (operation === 'dev') {
-        const result = lastOperand / parseInt(inputWindow.value);
+        const result = lastOperand / parseFloat(inputWindow.value);
         operation = null;
         lastOperand = 0;
         inputWindow.value = result;

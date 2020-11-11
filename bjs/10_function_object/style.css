@@ -1,0 +1,12 @@
+.card-header {
+    background-color: rgb(243, 132, 6);
+    font-size: large;
+}
+
+.card-body {
+    background-color: rgb(196, 194, 194);
+}
+
+.btn {
+    margin: 5px 5px;
+}
